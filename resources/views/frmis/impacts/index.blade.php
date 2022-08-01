@@ -7,24 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title  -->
-    <title>Taildash | Tailwind Dashboard Template</title>
+    <title>{{env('APP_FRMIS')}}</title>
     <meta name="description" content="Tailwind Dashboard Template">
 
     <!-- Development css (used in all pages) -->
-    <link rel="stylesheet" id="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" id="stylesheet" href="{{asset('src/css/style.css')}}">
     <!-- Production css (used in all pages) -->
     <!-- <link rel="stylesheet" href="../dist/css/style.css"> -->
 
     <!--start::Vendor Stylesheets (only on this page)-->
-    <link rel="stylesheet" href="../src/css/customizer.css">
-    <link rel="stylesheet" href="../src/css/prism.css">
+    <link rel="stylesheet" href="{{asset('src/css/customizer.css')}}">
+    <link rel="stylesheet" href="{{asset('src/css/prism.css')}}">
     <!--end::Vendor Stylesheets (only on this page)-->
 
     <!-- google font -->
     <link href="../css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../src/img/favicon.png">
+    <link rel="icon" href="{{asset('src/img/favicon.png')}}">
 </head>
 <body class="font-sans text-base font-normal text-gray-600 dark:text-gray-400 dark:bg-gray-800">
 <!-- wrapper -->
@@ -39,7 +39,7 @@
         <!-- End Navbar -->
 
         <main class="pt-20 -mt-2">
-            @livewire('frimis.impact')
+            @livewire('frmis.impact')
         </main>
 
         @include('frmis.inc.footer')
@@ -47,24 +47,10 @@
 </div>
 
 <!--start::Global javascript (used in all pages)-->
-<script src="../vendors/alpinejs/dist/cdn.min.js"></script><!-- core js -->
-<script src="../vendors/chart.js/dist/chart.min.js"></script><!-- charts -->
-<script src="../vendors/flatpickr/dist/flatpickr.min.js"></script><!-- input date -->
-<script src="../vendors/flatpickr/dist/plugins/rangePlugin.js"></script><!-- input range date -->
-<script src="../vendors/%40yaireo/tagify/dist/tagify.min.js"></script><!-- input tags -->
-<script src="../vendors/pristinejs/dist/pristine.min.js"></script><!-- form validation -->
-<script src="../vendors/simple-datatables/dist/umd/simple-datatables.js"></script><!--sort table-->
-<script src="../vendors/glightbox/dist/js/glightbox.min.js"></script><!-- lightbox image -->
-<script src="../vendors/flickity/dist/flickity.pkgd.min.js"></script><!-- slider -->
-<!--end::Global javascript (used in all pages)-->
+<script src="{{asset('vendors/alpinejs/dist/cdn.min.js')}}"></script><!-- core js -->
 
-<!-- Minify Global javascript (for production purpose) -->
-<!-- <script src="../dist/js/scripts.js"></script> -->
+<script src="{{asset('src/js/demo.js')}}"></script>
 
-<!--start::Demo javascript ( initialize global javascript )-->
-<script src="../src/js/demo.js"></script>
-
-<!--start::Customizer js ( Only for demo purpose )-->
-<script src="../src/js/customizer.js"></script>
+<script src="{{asset('src/js/customizer.js')}}"></script>
 </body>
 </html>

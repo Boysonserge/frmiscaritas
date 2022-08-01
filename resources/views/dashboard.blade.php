@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title  -->
-    <title>Taildash | Tailwind Dashboard Template</title>
+    <title>{{env('APP_FRMIS')}}</title>
     <meta name="description" content="Tailwind Dashboard Template">
 
     <!-- Development css (used in all pages) -->

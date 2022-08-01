@@ -10,4 +10,21 @@ class Impact extends Model
 {
     use HasFactory,SoftDeletes;
     protected $guarded=[];
+
+    public function indicators(){
+        return $this->hasMany(Indicator::class,'impact_id');
+    }
+
+
+    protected $casts=[
+        'districts'=>'array',
+        'sectors'=>'array',
+        'cells'=>'array',
+        'parishes'=>'array',
+        'centrales'=>'array',
+        'imiryango'=>'array',
+        'indicators'=>'array'
+    ];
+
+
 }

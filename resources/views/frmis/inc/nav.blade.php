@@ -286,7 +286,7 @@
                             class="flex flex-wrap flex-row items-center border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-40 dark:hover:bg-opacity-20 py-2 hover:bg-gray-100 bg-gray-50">
                             <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
                                 <div class="relative">
-                                    <img src="src/img/avatar/avatar2.png" class="h-10 w-10 rounded-full mx-auto"
+                                    <img src="{{asset('src/img/avatar/avatar2.png')}}" class="h-10 w-10 rounded-full mx-auto"
                                          alt="Daniel Esteban">
                                     <span title="online"
                                           class="flex justify-center absolute -bottom-0.5 ltr:right-2 rtl:left-2 text-center bg-green-500 border border-white w-3 h-3 rounded-full"></span>
@@ -305,7 +305,7 @@
                             class="flex flex-wrap flex-row items-center border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-40 dark:hover:bg-opacity-20 py-2 hover:bg-gray-100 bg-gray-50">
                             <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
                                 <div class="relative">
-                                    <img src="src/img/avatar/avatar3.png" class="h-10 w-10 rounded-full mx-auto"
+                                    <img src="{{asset('src/img/avatar/avatar3.png')}}" class="h-10 w-10 rounded-full mx-auto"
                                          alt="Carlos Garcia">
                                     <span title="busy"
                                           class="flex justify-center absolute -bottom-0.5 ltr:right-2 rtl:left-2 text-center bg-pink-500 border border-white w-3 h-3 rounded-full"></span>
@@ -323,7 +323,7 @@
                             class="flex flex-wrap flex-row items-center border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-40 dark:hover:bg-opacity-20 py-2 hover:bg-gray-100 bg-gray-50">
                             <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
                                 <div class="relative">
-                                    <img src="src/img/avatar/avatar4.png" class="h-10 w-10 rounded-full mx-auto"
+                                    <img src="{{asset('src/img/avatar/avatar4.png')}}" class="h-10 w-10 rounded-full mx-auto"
                                          alt="Steven Rey">
                                     <span title="offline"
                                           class="flex justify-center absolute -bottom-0.5 ltr:right-2 rtl:left-2 text-center bg-gray-500 border border-white w-3 h-3 rounded-full"></span>
@@ -341,7 +341,7 @@
                             class="flex flex-wrap flex-row items-center border-b border-gray-200 dark:border-gray-700 dark:hover:bg-gray-900 dark:hover:bg-opacity-20 py-2 hover:bg-gray-100">
                             <div class="flex-shrink max-w-full px-2 w-1/4 text-center">
                                 <div class="relative">
-                                    <img src="src/img/avatar/avatar.png" class="h-10 w-10 rounded-full mx-auto"
+                                    <img src="{{asset('src/img/avatar/avatar.png')}}" class="h-10 w-10 rounded-full mx-auto"
                                          alt="Roman Davis">
                                     <span title="offline"
                                           class="flex justify-center absolute -bottom-0.5 ltr:right-2 rtl:left-2 text-center bg-gray-500 border border-white w-3 h-3 rounded-full"></span>
@@ -514,11 +514,11 @@
                id="user-menu-button" @click="open = ! open">
                 <div class="relative">
                     <img class="h-10 w-10 rounded-full border border-gray-700 bg-gray-700"
-                         src="src/img/avatar/avatar.png" alt="avatar">
+                         src="{{asset('src/img/avatar/avatar.png')}}" alt="avatar">
                     <span title="online"
                           class="flex justify-center absolute -bottom-0.5 ltr:right-1 rtl:left-1 text-center bg-green-500 border border-white w-3 h-3 rounded-full"></span>
                 </div>
-                <span class="hidden md:block ltr:ml-1 rtl:mr-1 self-center">Ari Budin</span>
+                <span class="hidden md:block ltr:ml-1 rtl:mr-1 self-center">{{auth()->user()->name}}</span>
             </a>
             <ul x-show="open" @click.away="open = false"
                 x-transition:enter="transition-all duration-200 ease-out"
@@ -532,7 +532,7 @@
                 <li class="relative">
                     <div class="flex flex-wrap flex-row -mx-4 px-3 py-4 items-center">
                         <div class="flex-shrink max-w-full px-4 w-1/3">
-                            <img src="src/img/avatar/avatar.png" class="h-10 w-10 rounded-full" alt="Ari Budin">
+                            <img src="{{asset('src/img/avatar/avatar.png')}}" class="h-10 w-10 rounded-full" alt="Ari Budin">
                         </div>
                         <div class="flex-shrink max-w-full px-4 w-2/3 ltr:pl-1 rtl:pr-1">
                             <div class="font-bold"><a href="#"
@@ -590,14 +590,7 @@
                 <li class="relative">
                     <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500"
                        href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                             class="inline ltr:mr-2 rtl:ml-2 w-4 h-4 bi bi-box-arrow-in-right"
-                             viewbox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"></path>
-                            <path fill-rule="evenodd"
-                                  d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"></path>
-                        </svg>
+
                         <!-- <i class="mr-2 fas fa-sign-out-alt"></i> --> Sign out
                     </a>
                 </li>

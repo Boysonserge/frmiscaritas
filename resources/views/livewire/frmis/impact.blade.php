@@ -74,7 +74,7 @@
                         <div class="flex flex-row items-center">
                             <img src="../src/img/brand/logo.png"
                                  class="w-20 h-auto max-w-full ltr:mr-3 rtl:ml-3">
-                            <p class="text-sm text-gray-500">{{\Illuminate\Support\Str::limit($impa->impact_description,170)}} </p>
+                            <p class="text-sm text-gray-500">{!! \Illuminate\Support\Str::limit($impa->impact_description,170)  !!} </p>
                         </div>
                     </div>
 

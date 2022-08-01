@@ -2,12 +2,16 @@
 
 namespace App\Http\Livewire\Frmis;
 
+use Illuminate\View\View;
 use Livewire\Component;
 
 class Impact extends Component
 {
-    public function render()
+    public function render():View
     {
-        return view('livewire.frmis.impact');
+        $impacts=\App\Models\Impact::query()->get();
+        return view('livewire.frmis.impact',[
+            'impacts'=>$impacts
+        ]);
     }
 }

@@ -6,11 +6,11 @@
         <div class="mh-18 text-center py-5">
             <a href="#" class="relative">
                 <h2 class="text-2xl font-semibold text-gray-200 px-4 max-h-9 overflow-hidden hidden-compact">
-                    <img class="inline-block w-7 h-auto ltr:mr-2 rtl:ml-2 -mt-1" src="src/img/logo.png">
+                    <img class="inline-block w-7 h-auto ltr:mr-2 rtl:ml-2 -mt-1" src="{{asset('src/img/logo.png')}}">
 
                     <span class="text-gray-700 dark:text-gray-200">{{env('APP_FRMIS')}}</span>
                     <h2 class="text-3xl font-semibold mx-auto logo-compact hidden">
-                        <img class="inline-block w-7 h-auto -mt-1" src="src/img/logo.png">
+                        <img class="inline-block w-7 h-auto -mt-1" src="{{asset('src/img/logo.png')}}">
 
                     </h2>
                 </h2>
@@ -22,13 +22,22 @@
         <ul id="side-menu" x-data="{selected:1}"
             class="w-full float-none flex flex-col font-medium ltr:pl-1.5 rtl:pr-1.5">
             <!-- dropdown -->
+
+            <li>
+                <a class="block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="calendar.html">
+
+                    <i class="mr-2 fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
             <li class="relative">
                 <a :class="{ 'text-indigo-500 dark:text-gray-300': selected == 1 }" @click="selected !== 1 ? selected = 1 : selected = null" class="block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="javascript:;">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-house-door" viewbox="0 0 16 16">
-                        <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-layers" viewbox="0 0 16 16">
+                        <path d="M8.235 1.559a.5.5 0 0 0-.47 0l-7.5 4a.5.5 0 0 0 0 .882L3.188 8 .264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l2.922-1.559a.5.5 0 0 0 0-.882l-7.5-4zm3.515 7.008L14.438 10 8 13.433 1.562 10 4.25 8.567l3.515 1.874a.5.5 0 0 0 .47 0l3.515-1.874zM8 9.433 1.562 6 8 2.567 14.438 6 8 9.433z"></path>
                     </svg>
                     <!-- <i class="ltr:mr-2 rtl:ml-2 fas fa-home"></i> -->
-                    <span>Dashboards</span>
+                    <span>Impacts</span>
                     <!-- caret -->
                     <span class="inline-block ltr:float-right rtl:float-left">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="transform transition duration-300 mt-1.5 bi bi-chevron-down" :class="{ 'rotate-0': selected == 1, 'ltr:-rotate-90 rtl:rotate-90': !(selected == 1) }" width=".8rem" height=".8rem" viewbox="0 0 16 16">
@@ -40,25 +49,21 @@
 
                 <!-- dropdown menu -->
                 <ul x-show="selected == 1" x-transition:enter="transition-all duration-200 ease-out" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" class="block rounded rounded-t-none top-full z-50 ltr:pl-7 rtl:pr-7 py-0.5 ltr:text-left rtl:text-right mb-1 font-normal">
+
                     <li class="relative">
-                        <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="index.html">CMS</a>
-                    </li>
-                    <li class="relative">
-                        <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="index-analytics.html">Analytics</a>
+                        <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="{{route('impact.index')}}">My impacts</a>
                     </li>
 
+                    <li class="relative">
+                        <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="{{route('indicator.index')}}">Indicators</a>
+                    </li>
+
+                    <li class="relative">
+                        <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-indigo-500 dark:hover:text-gray-300" href="">Milestones</a>
+                    </li>
+
+
                 </ul>
-            </li>
-            <li>
-                <a class="block py-2.5 px-6 hover:text-indigo-500 dark:hover:text-gray-300" href="calendar.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                         class="inline-block h-4 w-4 ltr:mr-2 rtl:ml-2 bi bi-house-door" viewbox="0 0 16 16">
-                        <path
-                            d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
-                    </svg>
-                    {{--                    <i class="mr-2 fas fa-calendar-alt"></i>--}}
-                    <span>Dashboard</span>
-                </a>
             </li>
 
             <li>

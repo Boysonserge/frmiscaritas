@@ -8,33 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title  -->
-    <title>Taildash | Tailwind Admin Template</title>
+    <title>Login } FRMIS</title>
     <meta name="description" content="Tailwind Admin Template">
 
-    <link rel="stylesheet" id="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" id="stylesheet" href="{{asset('src/css/style.css')}}">
 
-    <link rel="stylesheet" href="../src/css/customizer.css">
-
-    <link href="../css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('src/css/customizer.css')}}">
 
     <!-- Favicon  -->
-    <link rel="icon" href="../src/img/favicon.png">
+    <link rel="icon" href="{{asset('/src/img/favicon.png')}}">
 </head>
 <body class="font-sans text-base font-normal text-gray-600 dark:text-gray-400 dark:bg-gray-800">
 <!-- preloader -->
-<div class="preloader loaded-success fixed inset-0 bg-gray-100 dark:bg-gray-900">
-    <div class="absolute left-1/2 top-1/2 transform -translate-y-1/2">
-        <div class="relative mx-auto my-12">
-            <div class="inline-block">
-                <svg class="animate-spin h-8 w-8 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <!-- <i class="text-3xl text-indigo-500 fas fa-circle-notch fa-spin"></i> -->
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40" style="background: url(../src/img/blog/blog_4.jpg);background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
     <div class="flex flex-wrap flex-row">
@@ -216,7 +202,7 @@
     </div>
 </div>
 
-<script src="{{asset('vendors/alpinejs/dist/cdn.min.js')}}"></script><!-- core js -->
+<script defer src="{{asset('vendors/alpinejs/dist/cdn.min.js')}}"></script><!-- core js -->
 <script src="{{asset('src/js/demo.js')}}"></script>
 <script src="{{asset('src/js/customizer.js')}}"></script>
 </body>

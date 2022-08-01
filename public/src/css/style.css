@@ -42,7 +42,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Nunito, sans-serif; /* 4 */
+  font-family: Quicksand, sans-serif; /* 4 */
 }
 
 /*
@@ -1955,7 +1955,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   vertical-align:middle;
 }
 .font-sans {
-  font-family:Nunito, sans-serif;
+  font-family:Quicksand, sans-serif;
 }
 .text-base {
   font-size:1rem;

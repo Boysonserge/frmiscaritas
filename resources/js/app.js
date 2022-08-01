@@ -1,7 +1,10 @@
-import './bootstrap';
+import Alpine from 'alpinejs'
+import FormsAlpinePlugin from '../../vendor/filament/forms/dist/module.esm'
+import focus from '@alpinejs/focus'
 
-import Alpine from 'alpinejs';
+Alpine.plugin(focus)
+Alpine.plugin(FormsAlpinePlugin)
 
-window.Alpine = Alpine;
+window.Alpine = Alpine
 
-Alpine.start();
+Alpine.start()

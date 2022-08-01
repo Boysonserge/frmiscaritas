@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('sectors', function (Blueprint $table) {
-            //
+            $table->softDeletes()->after('sector_name');
         });
     }
 
