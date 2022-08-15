@@ -1,3 +1,0 @@
-<div>
-    {{$districts}}
-</div>

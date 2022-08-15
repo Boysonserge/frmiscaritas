@@ -3,10 +3,14 @@
     <div class="flex flex-wrap flex-row">
         <div class="flex-shrink max-w-full px-4 w-full">
             <p class="text-xl font-bold mt-3 mb-5">My indicators</p>
+
+
         </div>
         <div class="flex-shrink max-w-full px-4 w-full mb-6">
             <div class="py-4 px-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg h-full">
                 <div class="flex flex-wrap flex-row">
+
+
                     <div class="flex-shrink max-w-full w-full">
                         <div class="md:flex md:justify-between">
                             <a href="{{route('indicator.create')}}"
@@ -60,27 +64,36 @@
                     <tbody>
 
 
-                        @foreach($myIndicators as $indicator)
+                        @forelse($myIndicators as $indicator)
                             <tr>
-                            <td>
-                                <div class="flex flex-wrap flex-row items-center">
-                                    <div class="leading-5 font-semibold dark:text-gray-300 flex-shrink max-w-full w-full mb-1">
-                                        {{$indicator->indicator}}
+                                <td>
+                                    <div class="flex flex-wrap flex-row items-center">
+                                        <div role="status" wire:loading class="animate-pulse h-2.5  bg-gray-300 rounded-full dark:bg-gray-600 w-full mb-2.5"></div>
+                                        <div wire:loading.remove class="leading-5 font-semibold dark:text-gray-300 flex-shrink max-w-full w-full mb-1">
+                                            {{$indicator->indicator}}
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="text-sm text-center px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full">
-                                    {{$indicator->impacts->impact_name}}</div>
-                            </td>
-                            <td class="hidden lg:table-cell">
-                                <div class="text-sm leading-5 text-gray-600">{{$indicator->created_at->diffForHumans()}}</div>
-                            </td>
+                                </td>
+                                <td>
+                                    <div role="status" wire:loading class="animate-pulse h-2.5  bg-gray-300 rounded-full dark:bg-gray-600 w-full mb-2.5"></div>
+                                    <div wire:loading.remove class="text-sm text-center px-2 py-1 font-semibold leading-tight text-yellow-700 bg-yellow-100 rounded-full">
+                                        {{$indicator->impacts->impact_name}}</div>
+                                </td>
+                                <td class="hidden lg:table-cell">
+                                    <div role="status" wire:loading class="animate-pulse h-2.5  bg-gray-300 rounded-full dark:bg-gray-600 w-full mb-2.5"></div>
+                                    <div wire:loading.remove class="text-sm leading-5 text-gray-600">{{$indicator->created_at->diffForHumans()}}</div>
+                                </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr><td class="text-blue-600 bold" colspan="4"><div role="status" wire:loading class="animate-pulse h-2.5  bg-gray-300 rounded-full dark:bg-gray-600 w-full mb-2.5"></div>
+                                    <span wire:loading.remove>No data available</span></td></tr>
+                        @endforelse
+
+
 
                     </tbody>
                 </table>
+                {{$myIndicators->links()}}
             </div>
         </div>
     </div>

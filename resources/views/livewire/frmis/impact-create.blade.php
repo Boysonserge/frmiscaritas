@@ -17,10 +17,10 @@
     </div>
     <div class="flex-shrink max-w-full px-4 w-full mb-6">
         <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg h-full">
-            <form autocomplete="false" wire:submit.prevent="shower" class="flex flex-wrap flex-row -mx-4">
+            <form autocomplete="off" wire:submit.prevent="shower" class="flex flex-wrap flex-row -mx-4">
                 <div class="flex-shrink max-w-full px-4 w-full mb-4">
                     <label for="inputtitle" class="inline-block mb-2">Impact title</label>
-                    <input wire:model="impactTitle" type="text"
+                    <input  wire:model.lazy="impactTitle" type="text"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="inputtitle">
 
@@ -28,7 +28,7 @@
                 </div>
                 <div wire:ignore class="flex-shrink max-w-full px-4 w-full mb-4">
                     <label for="inputdes" class="inline-block mb-2">Impact description</label>
-                    <textarea name="" id="description" wire:model="impactDescription" cols="30" rows="10"></textarea>
+                    <textarea name="" id="description" wire:model.lazy="impactDescription" cols="30" rows="10"></textarea>
                 </div>
 
                 <div class="flex-shrink max-w-full px-4 w-full mb-4">
@@ -36,7 +36,7 @@
                     <select id="district" class="select2 w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none
                     focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                             multiple
-                            wire:model.debounce.500ms="selectedDistrict">
+                            wire:model.lazy="selectedDistrict">
 
                         @foreach($districts as $dist)
                             <option value="{{$dist['id']}}">{{$dist['district_name']}}</option>
@@ -144,13 +144,13 @@
                 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="inputbudget" class="inline-block mb-2">Budget planned for whole project
                         (RWF) </label>
-                    <input wire:model="totalBudget" type="text"
+                    <input wire:model.lazy="totalBudget" type="text"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="inputbudget">
                 </div>
                 <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="inputtask" class="inline-block mb-2">Planned deadline</label>
-                    <input wire:model="deadline" type="date"
+                    <input wire:model.lazy="deadline" type="date"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="inputtask">
                 </div>
@@ -160,34 +160,34 @@
 
                 <div class="form-group flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="women" class="inline-block mb-2">Women</label>
-                    <input wire:model="women" type="number"
+                    <input wire:model.lazy="women" type="number"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="women" required="">
                 </div>
                 <div class="form-group flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="men" class="inline-block mb-2">Men</label>
-                    <input wire:model="men" type="number"
+                    <input wire:model.lazy="men" type="number"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="men" required="">
                 </div>
 
                 <div class="form-group flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="youths" class="inline-block mb-2">Youth</label>
-                    <input wire:model="youths" type="number"
+                    <input wire:model.lazy="youths" type="number"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="youths" required="">
                 </div>
 
                 <div class="form-group flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="disability" class="inline-block mb-2">With disability</label>
-                    <input wire:model="disability" type="number"
+                    <input wire:model.lazy="disability" type="number"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="disability" required="">
                 </div>
 
                 <div class="form-group flex-shrink max-w-full px-4 w-full md:w-1/2 mb-4">
                     <label for="baseline" class="inline-block mb-2">Baseline</label>
-                    <input wire:model="baseline" type="text"
+                    <input wire:model.lazy="baseline" type="text"
                            class="w-full leading-5 relative py-2 px-4 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-300 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                            id="disability" required="">
                 </div>

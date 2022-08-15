@@ -3,17 +3,30 @@
 namespace App\Http\Livewire\Frmis;
 
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Indicator extends Component
 {
-    public $searchQuery;
+    use WithPagination;
+    public $searchQuery="Test";
+    public $perPage=10;
+
+    public function updatingSearchQuery()
+    {
+        $this->resetPage();
+    }
+
+
     public function mount(){
         $this->searchQuery='';
     }
     public function render()
     {
-        return view('livewire.frmis.indicator',['myIndicators'=>\App\Models\Indicator::with('impacts')
-            ->where('indicator','like',"%$this->searchQuery%")
-            ->get()]);
+
+        $indicators=\App\Models\Indicator::with('impacts')
+            ->orderBy('id','DESC')
+            ->search('indicator',$this->searchQuery)
+            ->paginate($this->perPage);
+        return view('livewire.frmis.indicator',['myIndicators'=>$indicators]);
     }
 }

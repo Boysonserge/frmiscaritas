@@ -11,8 +11,8 @@ class Impact extends Model
     use HasFactory,SoftDeletes;
     protected $guarded=[];
 
-    public function indicators(){
-        return $this->hasMany(Indicator::class,'impact_id');
+    public function indicatorsRelation(){
+        return $this->hasManyThrough(Milestone::class,Indicator::class);
     }
 
 

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Indicator extends Model
@@ -16,4 +17,11 @@ class Indicator extends Model
     {
         return $this->belongsTo(Impact::class,'impact_id');
     }
+
+    public function milestones(): HasMany
+    {
+        return $this->hasMany(Milestone::class,'indicator_id');
+    }
+
+
 }

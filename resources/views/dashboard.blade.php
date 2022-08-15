@@ -1,50 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Title  -->
-    <title>{{env('APP_FRMIS')}}</title>
-    <meta name="description" content="Tailwind Dashboard Template">
-
-    <!-- Development css (used in all pages) -->
-    <link rel="stylesheet" id="stylesheet" href="{{asset('src/css/style.css')}}">
-
-    <!--start::Customizer Stylesheets (Only for demo purpose)-->
-    <link rel="stylesheet" href="{{asset('src/css/customizer.css')}}">
-    <!--end::Customizer Stylesheets (Only for demo purpose)-->
-
-    <!-- google font -->
-    <script src="{{asset('vendors/alpinejs/dist/cdn.min.js')}}"></script><!-- core js -->
-
-
-    <!-- Favicon  -->
-    <link rel="icon" href="{{asset('src/img/favicon.png')}}">
-</head>
-<body class="font-sans text-base font-normal text-gray-600 dark:text-gray-400 dark:bg-gray-800">
-<!-- wrapper -->
-<div x-data="{ open: false }" class="wrapper overflow-x-hidden bg-gray-100 dark:bg-gray-900 dark:bg-opacity-40">
-    @include('frmis.inc.sidebar')
-
-    <div x-bind:aria-expanded="open"
-         :class="{ 'ltr:ml-64 ltr:-mr-64 md:ltr:ml-0 md:ltr:mr-0 rtl:mr-64 rtl:-ml-64 md:rtl:mr-0 md:rtl:ml-0': open, 'ltr:ml-0 ltr:mr-0 md:ltr:ml-64 rtl:mr-0 rtl:ml-0 md:rtl:mr-64': !(open) }"
-         class="flex flex-col ltr:ml-64 rtl:mr-64 min-h-screen transition-all duration-500 ease-in-out">
-        @include('frmis.inc.nav')
-
+<x-app-layout title="FRMIS">
+    <x-slot name="sidebar">
+        @include('frmis.inc.sidebar')
+    </x-slot>
         <main class="pt-20 -mt-2">
             <div class="mx-auto p-2">
                 <!-- row -->
-
-
                 <div class="flex flex-wrap flex-row">
-
                     <div class="flex-shrink max-w-full px-4 w-full">
                         <p class="text-xl font-bold mt-3 mb-5">Home</p>
-                    </div>
 
+                    </div>
                     <div class="flex-shrink max-w-full px-4 w-full lg:w-1/2 mb-6">
                         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg px-8 py-6 relative overflow-hidden">
                             <div class="absolute ltr:-right-8 rtl:-left-8 -bottom-8 text-indigo-500">
@@ -59,14 +24,11 @@
                                 </svg>
                             </div>
                             <div class="relative">
-                                <h4 class="font-bold text-gray-800 dark:text-gray-200 text-2xl mb-3">Upgrade your
-                                    Hosting<br> with Cloud Server!</h4>
-                                <p class="text-gray-500 mb-6">Very simple to upgrade your hosting package with Cloud
-                                    Server. Discount <span class="font-semibold">30%</span> for first year subscription.
+                                <h4 class="font-bold text-gray-800 dark:text-gray-200 text-2xl mb-3">Start keeping records for your department </h4>
+                                <p class="text-gray-500 mb-6">Start tracking your impact indicators, risks (new and recent), and many more
                                 </p>
-                                <a href="#"
-                                   class="py-2 px-4 inline-block text-center mb-3 rounded leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Upgrade
-                                    now</a>
+                                <a href="{{route('impact.create')}}"
+                                   class="py-2 px-4 inline-block text-center mb-3 rounded leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Start now</a>
                             </div>
                         </div>
                     </div>
@@ -90,12 +52,13 @@
                                             </svg>
                                         </div>
                                         <div class="ltr:ml-3 rtl:mr-3">
-                                            <h2 class="self-center mb-1">Services</h2>
+                                            <h2 class="self-center mb-1">Impacts</h2>
                                             <p class="text-xl font-semibold">22</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="flex-shrink max-w-full px-4 w-1/2 mb-6">
                                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
                                     <div class="flex flex-row">
@@ -110,7 +73,7 @@
                                             </svg>
                                         </div>
                                         <div class="ltr:ml-3 rtl:mr-3">
-                                            <h2 class="self-center mb-1">Domain</h2>
+                                            <h2 class="self-center mb-1">Risks</h2>
                                             <p class="text-xl font-semibold">132</p>
                                         </div>
                                     </div>
@@ -145,8 +108,7 @@
                                                  fill="currentColor"
                                                  class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 w-8 h-8 bi bi-receipt"
                                                  viewbox="0 0 16 16">
-                                                <path
-                                                    d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"></path>
+                                                <path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z"></path>
                                                 <path
                                                     d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"></path>
                                             </svg>
@@ -164,24 +126,4 @@
 
             </div>
         </main>
-
-
-    </div>
-    @include('frmis.inc.footer')
-</div>
-
-<!--start::Global javascript (used in all pages)-->
-<script src="{{asset('vendors/alpinejs/dist/cdn.min.js')}}"></script><!-- core js -->
-<script src="{{asset('vendors/chart.js/dist/chart.min.js')}}"></script><!-- charts -->
-<script src="{{asset('vendors/flatpickr/dist/flatpickr.min.js')}}"></script><!-- input date -->
-<script src="{{asset('vendors/flatpickr/dist/plugins/rangePlugin.js')}}"></script><!-- input range date -->
-<script src="{{asset('vendors/%40yaireo/tagify/dist/tagify.min.js')}}"></script><!-- input tags -->
-<script src="{{asset('vendors/pristinejs/dist/pristine.min.js')}}"></script><!-- form validation -->
-<script src="{{asset('vendors/simple-datatables/dist/umd/simple-datatables.js')}}"></script><!--sort table-->
-<script src="{{asset('vendors/glightbox/dist/js/glightbox.min.js')}}"></script><!-- lightbox image -->
-<script src="{{asset('vendors/flickity/dist/flickity.pkgd.min.js')}}"></script><!-- slider -->
-<script src="{{asset('src/js/demo.js')}}"></script>
-<script src="{{asset('src/js/customizer.js')}}"></script>
-
-</body>
-</html>
+</x-app-layout>

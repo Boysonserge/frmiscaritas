@@ -43,12 +43,12 @@
 
     <div class="flex flex-wrap flex-row">
 
-        @foreach($impacts as $impa)
+        @forelse($impacts as $impa=>$value)
             <div class="flex-shrink max-w-full px-4 w-full lg:w-1/2">
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
                     <div class="flex flex-row justify-between pb-4">
                         <div class="flex flex-col">
-                            <h3 class="text-base font-bold">{{$impa->impact_name}}</h3>
+                            <h3 class="text-base font-bold"><a href="">{{$value->impact_name}}</a></h3>
                         </div>
                         <div x-data="{ open: false }" class="relative">
                             <button @click="open = ! open"
@@ -74,59 +74,63 @@
                         <div class="flex flex-row items-center">
                             <img src="../src/img/brand/logo.png"
                                  class="w-20 h-auto max-w-full ltr:mr-3 rtl:ml-3">
-                            <p class="text-sm text-gray-500">{!! \Illuminate\Support\Str::limit($impa->impact_description,170)  !!} </p>
+                            <p class="text-sm text-gray-500">{!! \Illuminate\Support\Str::limit($value->impact_description,170)  !!} </p>
                         </div>
                     </div>
+
 
                     <div class="flex items-center justify-between mb-4">
                                 <span
                                     class="px-2 py-1 flex items-center font-semibold text-xs rounded text-yellow-700 bg-yellow-200">On Progress</span>
                         <span
-                            class="px-2 py-1 flex items-center font-semibold text-xs rounded text-red-400 border border-red-400  bg-white">Due date: {{date('d-m-Y', strtotime($impa->deadline));}}</span>
+                            class="px-2 py-1 flex items-center font-semibold text-xs rounded text-red-400 border border-red-400  bg-white"><b>Due date:</b> {{\Carbon\Carbon::parse($value->deadline)->format('dS-F-Y')}}</span>
                     </div>
 
                     <div class="relative mb-4">
+
                         <a href="#">
-                            <img
-                                class="inline-block rounded-full shadow-xl w-12 h-12 max-w-full ltr:-mr-4 rtl:-ml-4 border-2 bg-gray-300 border-gray-200 transform hover:-translate-y-1"
-                                src="../src/img/avatar/avatar2.png" alt="Image Description">
-                        </a>
-                        <a href="#">
-                            <img
-                                class="inline-block rounded-full shadow-xl w-12 h-12 max-w-full ltr:-mr-4 rtl:-ml-4 border-2 bg-gray-300 border-gray-200 transform hover:-translate-y-1"
-                                src="../src/img/avatar/avatar3.png" alt="Image Description">
-                        </a>
-                        <a href="#">
-                            <img
-                                class="inline-block rounded-full shadow-xl w-12 h-12 max-w-full ltr:-mr-4 rtl:-ml-4 border-2 bg-gray-300 border-gray-200 transform hover:-translate-y-1"
-                                src="../src/img/avatar/avatar4.png" alt="Image Description">
-                        </a>
-                        <a href="#">
-                            <span class="ltr:ml-5 rtl:mr-5 text-sm text-gray-500 font-semibold self-center">+2 more</span>
+                            <span class="ltr:ml-5 rtl:mr-5 text-sm text-gray-500 font-semibold self-center">
+                                <b>{{count($value->indicatorsRelation)}} </b> Indicators
+                            </span>
                         </a>
                     </div>
+                    <?php  $num=number_format((($value->indicatorsRelation->sum('planned_men'))/($value->men + $value->women))*100) ?>
 
                     <div class="w-full h-4 bg-gray-200 rounded-full mt-2">
-                        <div class="h-full text-center text-xs text-white bg-yellow-500 rounded-full"
-                             style="width:55%">
-                            <span class="text-xs text-white text-center">55%</span>
+                        <div class="h-full text-center text-xs rounded-full
+                        @if($num>50) bg-blue-500 @else text-red-500 bg-blue-500 @endif
+                         "
+                             style="width:{{$num}}%">
+                            <span class="text-xs text-white text-center">{{$num}}%</span>
+
+
+
+
                         </div>
                     </div>
 
+
+
+                    {{--[{"id":15,"indicator_id":21,"from":"2022-08-10 00:00:00","to":"2022-09-24 00:00:00","nature_of_support":"Milestone description","planned_men":32,"planned_women":456,"planned_youths":45,"planned_disabilities":45,"planned_budget":56656,"achieved_men":32,"achieved_women":54,"achieved_youths":32,"achieved_disabilities":76,"achieved_budget":456755554,"chief_status":0,"deleted_at":null,"created_at":"2022-08-10T18:48:23.000000Z","updated_at":"2022-08-10T18:48:23.000000Z"}]--}}
                     <div class="flex justify-between mt-3">
                         <div>
                                     <span
-                                        class="text-sm inline-block text-gray-500 dark:text-gray-100">Task done : <span
-                                            class="text-gray-700 dark:text-white font-bold">26</span>/50</span>
+                                        class="text-sm inline-block text-gray-500 dark:text-gray-100">Beneficiaries achived : <span
+                                            class="text-gray-700 dark:text-white font-bold">{{$value->indicatorsRelation->sum('planned_men')}}</span> / {{$value->men + $value->women}}</span>
                         </div>
+
                         <div>
-                            <span class="px-2 py-1 text-xs rounded font-semibold text-green-500 bg-green-50">Front End</span>
-                            <span class="px-2 py-1 text-xs rounded text-indigo-500 font-semibold bg-indigo-100">UI/UX</span>
+                            <span class="px-2 py-1 text-xs rounded font-semibold text-green-500 bg-green-50">End:</span>
+                            <span class="px-2 py-1 text-xs rounded text-indigo-500 font-semibold bg-indigo-100">{{\Carbon\Carbon::parse($value->deadline)->diffForHumans()}}</span>
                         </div>
                     </div>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <div class="container">
+                No available impact created by you  ! You can create one <a href="{{route('impact.create')}}">Here</a>
+            </div>
+        @endforelse
         <!-- project item -->
 
         <!-- project item -->

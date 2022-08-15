@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ImpactController;
 use App\Http\Controllers\IndicatorController;
+use App\Http\Controllers\MilestoneController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,6 +66,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('impact',ImpactController::class);
     Route::resource('indicator', IndicatorController::class);
+    Route::resource('milestone', MilestoneController::class);
     Route::apiResource('api.users', UserController::class);
 
 });
