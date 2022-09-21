@@ -32,6 +32,12 @@ return new class extends Migration
             $table->foreignId('department_id')->constrained()
                 ->cascadeOnDelete()->cascadeOnUpdate()
                 ->comment('In which department was created in');
+            $table->string('districts')->nullable();
+            $table->string('sectors')->nullable();
+            $table->string('cells')->nullable();
+            $table->string('parishes')->nullable();
+            $table->string('centrales')->nullable();
+            $table->string('imiryango')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

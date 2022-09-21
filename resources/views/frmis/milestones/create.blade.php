@@ -44,19 +44,16 @@
     <!-- End Navbar -->
 
         <main class="pt-20 -mt-2">
-
             @livewire('frmis.milestone-create')
         </main>
         @include('frmis.inc.footer')
     </div>
 </div>
 
-
 @include('flatpickr::components.script')
 @livewireScripts
 <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
 @component('livewire-notification::components.toast') @endcomponent
-
 
 
 <script src="https://unpkg.com/flowbite@1.5.1/dist/datepicker.js"></script>
@@ -69,8 +66,6 @@
 <script src="{{asset('src/js/customizer.js')}}"></script>
 
 <script>
-
-
 
     $(document).ready(function() {
         $('.select2').select2();

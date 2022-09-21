@@ -14,4 +14,8 @@ class Sector extends Model
     public function districts(){
         return $this->belongsTo(District::class,'district_id');
     }
+
+    public function cell(){
+        return $this->hasMany(Cell::class,'sector_id');
+    }
 }

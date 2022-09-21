@@ -14,7 +14,6 @@ class Milestone extends Model
 
     public function indicators(): BelongsTo
     {
-
         return $this->belongsTo(Indicator::class,'indicator_id');
     }
 

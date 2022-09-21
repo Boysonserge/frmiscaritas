@@ -1,32 +1,27 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-    presets: [
-            require('./vendor/wireui/wireui/tailwind.config.js')
-    ],
     content: [
         './resources/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
-        './vendor/wireui/wireui/resources/**/*.blade.php',
-
-        './vendor/wireui/wireui/ts/**/*.ts',
-
-        './vendor/wireui/wireui/src/View/**/*.php'
     ],
+
+        'google_fonts' : 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap',
+
+
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
                 danger: colors.rose,
                 primary: colors.blue,
+                success: colors.green,
+                warning: colors.yellow,
             },
         },
     },
     plugins: [
-        require("@tailwindcss/forms")({
-            strategy: 'class',
-        }),
+        require('@tailwindcss/forms'),
         require('@tailwindcss/typography'),
     ],
-
-    darkMode: 'class',
 }

@@ -3216,7 +3216,7 @@ var effectsEffectExplode = $.effects.define( "explode", "hide", function( option
 		height = Math.ceil( element.outerHeight() / rows ),
 		pieces = [];
 
-	// Children animate complete:
+	// Childrensss animate complete:
 	function childComplete() {
 		pieces.push( this );
 		if ( pieces.length === rows * cells ) {

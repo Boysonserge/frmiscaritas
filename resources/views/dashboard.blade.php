@@ -25,7 +25,8 @@
                             </div>
                             <div class="relative">
                                 <h4 class="font-bold text-gray-800 dark:text-gray-200 text-2xl mb-3">Start keeping records for your department </h4>
-                                <p class="text-gray-500 mb-6">Start tracking your impact indicators, risks (new and recent), and many more
+                                <p class="text-gray-500 mb-6">Start tracking your impact indicators, risks (new and recent),
+                                    <br> and many more
                                 </p>
                                 <a href="{{route('impact.create')}}"
                                    class="py-2 px-4 inline-block text-center mb-3 rounded leading-5 text-gray-100 bg-indigo-500 border border-indigo-500 hover:text-white hover:bg-indigo-600 hover:ring-0 hover:border-indigo-600 focus:bg-indigo-600 focus:border-indigo-600 focus:outline-none focus:ring-0">Start now</a>

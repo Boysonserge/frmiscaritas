@@ -12,6 +12,14 @@ class District extends Model
     protected $guarded=[];
 
     public function centrales(){
-        return $this->hasMany(Centrale::class,'dustrict_id');
+        return $this->hasMany(Centrale::class,'district_id');
+    }
+
+    public function sector(){
+        return $this->hasMany(Sector::class,'district_id');
+    }
+
+    public function parish(){
+        return $this->hasMany(Parish::class,'district_id');
     }
 }

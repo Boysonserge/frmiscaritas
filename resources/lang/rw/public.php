@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'message'=>'Hello bro'
+    'message'=>'Muraho'
 ];

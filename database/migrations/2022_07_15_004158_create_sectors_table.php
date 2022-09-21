@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('district_id')->constrained()
                 ->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('sector_name')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

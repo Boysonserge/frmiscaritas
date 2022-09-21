@@ -8,6 +8,8 @@
     <meta name="author" content="Caritas Diocese Kabgayi">
     <title>Caritas Diocese Kabgayi</title>
 
+
+
     <link rel="shortcut icon" href="{{asset('images/resource/caritas2.png')}}">
 
     <!-- Google Fonts -->
@@ -29,6 +31,7 @@
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    @livewireStyles
 
 </head>
 
@@ -43,6 +46,10 @@
 
     <!-- End Main Header -->
 
+    @isset($body)
+        {{$body}}
+    @endisset
+
 
 
     <!-- Main Footer -->
@@ -52,14 +59,13 @@
 
     <!--Scroll to top-->
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon flaticon-arrow"></span></div>
-
-
 </div>
 <!--End pagewrapper-->
 
 
 
 <!-- JS -->
+@livewireScripts
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>

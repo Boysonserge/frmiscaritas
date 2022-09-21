@@ -23,7 +23,6 @@
 
     @livewireStyles
 
-
     <!-- Favicon  -->
     <link rel="icon" href="{{asset('src/img/favicon.png')}}">
 </head>
@@ -58,11 +57,7 @@
     </div>
 </div>
 
-
-
 @livewireScripts
-
-
 
 <script src="{{asset('vendors/chart.js/dist/chart.min.js')}}"></script><!-- charts -->
 <script src="{{asset('vendors/alpinejs/dist/cdn.min.js')}}"></script><!-- core js -->
@@ -72,9 +67,6 @@
 <script src="{{asset('src/js/customizer.js')}}"></script>
 
 <script>
-
-
-
     $(document).ready(function() {
         $('.select2').select2();
         $('.select3').select2({
@@ -90,7 +82,6 @@
             placeholder: "Type impact indicators"
         });
         $('.select2').select2();
-
     })
 
 </script>

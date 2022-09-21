@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Impact;
+use App\Models\Milestone;
 use Illuminate\Http\Request;
 
 class ImpactController extends Controller
@@ -12,6 +13,7 @@ class ImpactController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
+    public $impactId;
     public function index()
     {
         return view('frmis.impacts.index');
@@ -46,7 +48,16 @@ class ImpactController extends Controller
      */
     public function show(Impact $impact)
     {
-        //
+        $this->impactId=$impact->id;
+
+        $milestones=Milestone::query()->whereHas('indicators.impacts', function ($query){
+            $query->where('impacts.id',$this->impactId);
+        })->get();
+
+       return view('frmis.impacts.show',[
+           'impact'=>$impact,
+           'milestones'=>$milestones
+           ]);
     }
 
     /**

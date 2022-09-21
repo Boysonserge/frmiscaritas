@@ -48,7 +48,7 @@
                 <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
                     <div class="flex flex-row justify-between pb-4">
                         <div class="flex flex-col">
-                            <h3 class="text-base font-bold"><a href="">{{$value->impact_name}}</a></h3>
+                            <h3 class="text-base font-bold"><a href="{{route('impact.show',$value->id)}}">{{$value->impact_name}}</a></h3>
                         </div>
                         <div x-data="{ open: false }" class="relative">
                             <button @click="open = ! open"

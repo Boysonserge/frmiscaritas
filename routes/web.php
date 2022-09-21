@@ -1,11 +1,22 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LocalizationController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('welcome');
 })->name('/');
+
+Route::resource('blog', BlogController::class);
+
+Route::get('lang/{lang}',[LocalizationController::class,'setLang']);
+
+
+
+
+
 
 Route::view('/powergrid', 'powergrid-demo');
 

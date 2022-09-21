@@ -10,13 +10,6 @@ use Spatie\Translatable\HasTranslations;
 class Blog extends Model
 {
     use HasFactory, SoftDeletes;
-    use HasTranslations;
     protected $guarded=[];
 
-    public $translatable=[
-        'blogTitle',
-        'blogSlug',
-        'blogSummary',
-        'mainStory'
-    ];
 }
