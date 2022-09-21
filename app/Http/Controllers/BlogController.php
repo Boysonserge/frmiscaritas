@@ -47,14 +47,15 @@ class BlogController extends Controller
     public function show(string $slug)
     {
         if (app()->getLocale()=='fr'){
-            $selectedBlog=Blog::query()->where('blogSlug',$slug)->select('blogTitle','blogSlug','mainStory','mainPhoto','views','created_at')->first();
+            $selectedBlog=Blog::query()->where('blogSlug',$slug)->select('blogTitle','blogSummary','blogSlug','mainStory','mainPhoto','views','created_at')->first();
         }
         elseif (app()->getLocale()=='en'){
-            $selectedBlog=Blog::query()->where('blogSlug_en',$slug)->select('blogTitle_en as blogTitle','blogSlug_en as blogSlug','mainStory_en as mainStory','mainPhoto','views','created_at')->first();
+            $selectedBlog=Blog::query()->where('blogSlug_en',$slug)->select('blogTitle_en as blogTitle','blogSummary_en as blogummary','blogSlug_en as blogSlug','mainStory_en as mainStory','mainPhoto','views','created_at')->first();
         }
         elseif (app()->getLocale()=='kiny'){
-            $selectedBlog=Blog::query()->where('blogSlug_kiny',$slug)->select('blogTitle_kiny as blogTitle','blogSlug_kiny as blogSlug','mainStory_kiny as mainStory','mainPhoto','views','created_at')->first();
+            $selectedBlog=Blog::query()->where('blogSlug_kiny',$slug)->select('blogTitle_kiny as blogTitle','blogSummary_kiny as blogSummary','blogSlug_kiny as blogSlug','mainStory_kiny as mainStory','mainPhoto','views','created_at')->first();
         }
+
 
         return view('blog.show',['selectedBlog'=>$selectedBlog]);
     }

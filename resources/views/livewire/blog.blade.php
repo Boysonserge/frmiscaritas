@@ -14,13 +14,7 @@
                     <div class="lower-content">
                         <div class="date"><span class="flaticon-clock"></span>Jul 14, 2019 {{app()->getLocale()}}</div>
                         <h4><a href="{{ route('blog.show',$value->blogSlug) }}">
-                                @if(app()->getLocale()=='fr')
-                                    {{$value->blogTitle}}
-                                @elseif(app()->getLocale()=='en')
-                                    {{$value->blogTitle_en}}
-                                @elseif(app()->getLocale()=='kiny')
-                                    {{$value->blogTitle_kiny}}
-                                @endif
+                                {{$value->blogTitle}}
 
                             </a></h4>
                         <div class="author-info">
@@ -42,7 +36,7 @@
             {{__('No blogs available')}}
         @endforelse
     </div>
-    <div class="posts-pagination mb-30 mt-20">
-        <button class="submin-btn"><span class="flaticon-add"></span>Load more</button>
-    </div>
+
+    {{$blogs->links()}}
+
 </div>

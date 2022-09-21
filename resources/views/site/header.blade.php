@@ -9,9 +9,9 @@
                             <span class="current" title="{{app()->getLocale()}}">{{app()->getLocale()}}</span>
                             <span class="hover">{{app()->getLocale()}}</span>
                             <ul>
-                                <li><a href="lang/en">English</a></li>
-                                <li><a href="lang/kiny">Kinyarwanda</a></li>
-                                <li><a href="lang/fr">French</a></li>
+                                <li><a href="{{route('lang','en')}}">English</a></li>
+                                <li><a href="{{route('lang','kiny')}}">Kinyarwanda</a></li>
+                                <li><a href="{{route('lang','fr')}}">French</a></li>
 
                             </ul>
 

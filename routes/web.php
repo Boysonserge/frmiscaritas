@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 Route::resource('blog', BlogController::class);
 
-Route::get('lang/{lang}',[LocalizationController::class,'setLang']);
+Route::get('lang/{lang}',[LocalizationController::class,'setLang'])->name('lang');
 
 
 
