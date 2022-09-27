@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Responsibility extends Model
+class EveryYear extends Model
 {
     use HasFactory,SoftDeletes;
 
@@ -16,6 +16,4 @@ class Responsibility extends Model
     {
         return $this->belongsTo(Children::class);
     }
-
-
 }

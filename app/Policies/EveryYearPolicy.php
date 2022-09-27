@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Responsibility;
+use App\Models\EveryYear;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ResponsibilityPolicy
+class EveryYearPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class ResponsibilityPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Responsibility  $responsibility
+     * @param  \App\Models\EveryYear  $everyYear
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Responsibility $responsibility)
+    public function view(User $user, EveryYear $everyYear)
     {
         return true;
     }
@@ -48,10 +48,10 @@ class ResponsibilityPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Responsibility  $responsibility
+     * @param  \App\Models\EveryYear  $everyYear
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Responsibility $responsibility)
+    public function update(User $user, EveryYear $everyYear)
     {
         return true;
     }
@@ -60,10 +60,10 @@ class ResponsibilityPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Responsibility  $responsibility
+     * @param  \App\Models\EveryYear  $everyYear
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Responsibility $responsibility)
+    public function delete(User $user, EveryYear $everyYear)
     {
         return true;
     }
@@ -72,10 +72,10 @@ class ResponsibilityPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Responsibility  $responsibility
+     * @param  \App\Models\EveryYear  $everyYear
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Responsibility $responsibility)
+    public function restore(User $user, EveryYear $everyYear)
     {
         return true;
     }
@@ -84,10 +84,10 @@ class ResponsibilityPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Responsibility  $responsibility
+     * @param  \App\Models\EveryYear  $everyYear
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Responsibility $responsibility)
+    public function forceDelete(User $user, EveryYear $everyYear)
     {
         return true;
     }
