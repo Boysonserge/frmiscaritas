@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ChildrenResource\Pages;
 use App\Filament\Resources\ChildrenResource\RelationManagers;
+use App\Models\Centrale;
 use App\Models\Children;
 use App\Models\District;
 use App\Models\Parish;
@@ -24,7 +25,7 @@ class ChildrenResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-calculator';
 
-    protected static ?string $navigationGroup = 'About FRMIS';
+    protected static ?string $navigationGroup = 'CBR Program';
 
     public static function form(Form $form): Form
     {
@@ -91,6 +92,20 @@ class ChildrenResource extends Resource
                                     }
                                     return $parish->centrales()->pluck('centrale_name', 'id');
                                 })->required(),
+
+                            Forms\Components\Select::make('imiryango_id')
+                                ->label('Umuryango remezo')
+                                ->searchable()
+                                ->reactive()
+                                ->options(function (callable $get) {
+                                    $centrale = Centrale::find($get('centrale_id'));
+                                    if (!$centrale) {
+                                        return [];
+                                    }
+                                    return $centrale->imiryango()->pluck('name', 'id');
+                                })->required(),
+                            Forms\Components\TextInput::make('village')
+                                ->maxLength(255),
                         ])
                         ->collapsible(),
 

@@ -13,6 +13,8 @@ Route::resource('blog', BlogController::class);
 
 Route::get('lang/{lang}',[LocalizationController::class,'setLang'])->name('lang');
 
+Route::post('sendcomment',[BlogController::class,'sendComment'])->name('sendcomment');
+
 
 
 

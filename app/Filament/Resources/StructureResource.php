@@ -13,6 +13,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class StructureResource extends Resource
 {
@@ -34,23 +35,20 @@ class StructureResource extends Resource
                                 ->schema([
                                     Forms\Components\TextInput::make('structureTitle')
                                         ->maxLength(255)->columnSpan(2),
-                                    Forms\Components\MarkdownEditor::make('structureDescription')
+                                    TinyEditor::make('structureDescription')
                                         ->columnSpan(2)
-                                        ->maxLength(16777215),
                                 ]),
                             Tabs\Tab::make('English')
                                 ->schema([
                                     Forms\Components\TextInput::make('structureTitle_en')
                                         ->maxLength(255),
-                                    Forms\Components\Textarea::make('structureDescription_en')
-                                        ->maxLength(16777215),
+                                    TinyEditor::make('structureDescription_en')
                                 ]),
                             Tabs\Tab::make('Kinyarwanda')
                                 ->schema([
                                     Forms\Components\TextInput::make('structureTitle_kiny')
                                         ->maxLength(255),
-                                    Forms\Components\Textarea::make('structureDescription_kiny')
-                                        ->maxLength(16777215),
+                                    TinyEditor::make('structureDescription_kiny')
                                 ]),
                         ]),
 

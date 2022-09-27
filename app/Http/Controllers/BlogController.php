@@ -7,6 +7,22 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+
+    public function sendComment(Request $request)
+    {
+
+        $blog = Blog::find($request->blog_id);
+        $blog->comments()->create([
+            'names' => $request->names,
+            'email' => $request->email,
+            'comment' => $request->comment,
+            'phone' => $request->phone,
+        ]);
+
+
+
+        return back()->with('success','Comment added successfully');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -47,17 +63,23 @@ class BlogController extends Controller
     public function show(string $slug)
     {
         if (app()->getLocale()=='fr'){
-            $selectedBlog=Blog::query()->where('blogSlug',$slug)->select('blogTitle','blogSummary','blogSlug','mainStory','mainPhoto','views','created_at')->first();
+            $selectedBlog=Blog::query()->where('blogSlug',$slug)->select('id','blogTitle','blogSummary','blogSlug','mainStory','mainPhoto','views','created_at')->first();
         }
         elseif (app()->getLocale()=='en'){
-            $selectedBlog=Blog::query()->where('blogSlug_en',$slug)->select('blogTitle_en as blogTitle','blogSummary_en as blogummary','blogSlug_en as blogSlug','mainStory_en as mainStory','mainPhoto','views','created_at')->first();
+            $selectedBlog=Blog::query()->where('blogSlug_en',$slug)->select('id','blogTitle_en as blogTitle','blogSummary_en as blogummary','blogSlug_en as blogSlug','mainStory_en as mainStory','mainPhoto','views','created_at')->first();
         }
         elseif (app()->getLocale()=='kiny'){
-            $selectedBlog=Blog::query()->where('blogSlug_kiny',$slug)->select('blogTitle_kiny as blogTitle','blogSummary_kiny as blogSummary','blogSlug_kiny as blogSlug','mainStory_kiny as mainStory','mainPhoto','views','created_at')->first();
+            $selectedBlog=Blog::query()->where('blogSlug_kiny',$slug)->select('id','blogTitle_kiny as blogTitle','blogSummary_kiny as blogSummary','blogSlug_kiny as blogSlug','mainStory_kiny as mainStory','mainPhoto','views','created_at')->first();
         }
 
 
-        return view('blog.show',['selectedBlog'=>$selectedBlog]);
+        $comments=$selectedBlog->comments()->select('names','email','comment','phone','created_at')->get();
+
+        return view('blog.show',
+            [
+                'selectedBlog'=>$selectedBlog,
+                'comments'=>$comments
+            ]);
     }
 
     /**

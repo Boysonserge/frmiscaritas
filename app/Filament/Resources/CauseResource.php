@@ -14,6 +14,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class CauseResource extends Resource
 {
@@ -39,7 +40,7 @@ class CauseResource extends Resource
                                 Forms\Components\TextInput::make('causeTitle')
                                     ->maxLength(255),
                                 Forms\Components\MarkdownEditor::make('causeSummary'),
-                                Forms\Components\RichEditor::make('causeDescription'),
+                                TinyEditor::make('causeDescription'),
 
                             ]),
                         Tabs\Tab::make('English')

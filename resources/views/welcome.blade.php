@@ -54,16 +54,16 @@
                             <div class="text wow fadeInUp" data-wow-delay="200ms">{{__('about.about-content1')}}</div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="link-btn wow fadeInLeft" data-wow-delay="500ms"><a href="#" class="theme-btn btn-style-two"><i class="flaticon-next"></i><span>Mission</span></a></div>
-                                    <div class="text">The Mission of Caritas Diocese Kabgayi is to assist the most vulnerable people in the society, to intervene in case of disasters and advocacy for the needy in promoting integral human development.</div>
+                                    <div class="link-btn wow fadeInLeft" data-wow-delay="500ms"><a href="#" class="theme-btn btn-style-two"><i class="flaticon-next"></i><span>{{__('about.mission')}}</span></a></div>
+                                    <div class="text">{{__('about.mission-content')}}</div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="link-btn wow fadeInRight" data-wow-delay="900ms"><a href="#" class="theme-btn btn-style-three"><i class="flaticon-next"></i><span>Vision</span></a></div>
-                                    <div class="text">Our Vision is to achieve a society that provides human dignity and saves its members from social marginalization and injustices. Its inherent concern is to see the poorest social groups, individually or in social solidarity, be self dependent to achieve their human dignity.</div>
+                                    <div class="link-btn wow fadeInRight" data-wow-delay="900ms"><a href="#" class="theme-btn btn-style-three"><i class="flaticon-next"></i><span>{{__('about.vision')}}</span></a></div>
+                                    <div class="text">{{__('about.vision-content')}}</div>
                                 </div>
                             </div>
                             <div class="link-btn-two">
-                                <a href="about.php" class="theme-btn btn-style-one"><span>More About Us</span></a>
+                                <a href="" class="theme-btn btn-style-one"><span>{{__('about.more-about')}}</span></a>
                             </div>
                         </div>
                     </div>
@@ -86,6 +86,479 @@
             </div>
         </section>
 
+
+        <!-- Causes Section -->
+        <section class="causes-section">
+            <div class="container">
+                <div class="sec-title text-center">
+                    <h1>Causes we care about</h1>
+                    <div class="text">We connects nonprofits, donors, and companies in nearly every country around the world.</div>
+                </div>
+                <div class="cause-carousel-wrapper">
+                    <div class="cause-carousel owl-theme owl-carousel owl-dots-none owl-nav-style-three">
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/agri.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Support In Agriculture</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-book"></span>Agriculture</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/mental.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help People from Mental Deseases</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-heart"></span>Helth & Diseases</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/agr2.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Support In Agriculture</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-book"></span>Agriculture</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/stu1.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help In Education</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-book"></span>Education</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Aamount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/agr4.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Support In Livestock</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-book"></span>Agriculture</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/eld1.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Support Elders Generation</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-fruit"></span>Hunger & Nutrition</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/stu3.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help Childreen Drop Out From Schools</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-book"></span>Education</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/dev1.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help In Disasters Risk Management</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-heart"></span>Development</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/stu2.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help Orphans In Education</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-book"></span>Education</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/dev2.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help In Environmental Protectionj</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-heart"></span>Development</a></div>
+                                    <div class="text"></div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/wom1.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help In Empowering Women</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-fruit"></span>Hunger & Nutrition</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cause Block One -->
+                        <div class="cause-block-one">
+                            <div class="inner-box">
+                                <div class="image"><a href="#"><img src="{{asset('images/resource/ment1.jpg')}}" alt=""></a></div>
+                                <div class="lower-content">
+                                    <h4><a href="#">Help Helpless In HealthCare</a></h4>
+                                    <div class="category"><a href="#"><span class="flaticon-fruit"></span>Hunger & Nutrition</a></div>
+                                    <div class="text">Content</div>
+                                    <div class="info-box">
+                                        <a href="#"><span>Raised:</span> $Amount</a>
+                                        <a href="#"><span>Goal:</span> $Amount</a>
+                                    </div>
+                                    <!--Progress Levels-->
+                                    <div class="progress-levels">
+
+                                        <!--Skill Box-->
+                                        <div class="progress-box wow fadeInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                                            <div class="inner">
+                                                <div class="bar">
+                                                    <div class="bar-innner"><div class="bar-fill" data-percent="60"><div class="percent"></div></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text">Raised by a Number Of people in a Number Of days</div>
+                                    <div class="bottom-content">
+                                        <div class="link-btn"><a href="#" class="theme-btn btn-style-one donate-box-btn"><span>Donate Now</span></a></div>
+                                        <div class="share-icon post-share-icon">
+                                            <div class="share-btn"><i class="flaticon-share"></i></div>
+                                            <ul>
+                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Blog Section -->
         <section class="blog-section">
             @livewire('blog')
@@ -97,12 +570,12 @@
             <div class="auto-container">
                 <div class="row m-0 justify-content-md-between align-items-end">
                     <div class="sec-title light">
-                        <h1>Team behind Caritas Diocese Kabgayi.</h1>
-                        <div class="text">Our work would not be possible without the work of our dedicated volunteers.</div>
+                        <h1>{{__('about.team-behind')}}</h1>
+                        <div class="text">{{__('about.team-behind-content')}}</div>
                     </div>
                     <!--Link Btn-->
                     <div class="link-btn mb-50">
-                        <a href="all_team_members.php" class="theme-btn btn-style-one"><span>Meet All Members</span></a>
+                        <a href="" class="theme-btn btn-style-one"><span>{{__('about.meet-all')}}</span></a>
                     </div>
                 </div>
                 <div class="wrapper-box">
@@ -113,7 +586,7 @@
                                 <div class="image"><a href="#"><img src="https://blogtimenow.com/wp-content/uploads/2014/06/hide-facebook-profile-picture-notification.jpg" alt=""></a></div>
                                 <div class="lower-content">
                                     <h4> <a href="#">BAKUNDUKIZE Pamphile</a></h4>
-                                    <div class="designation">Head Of Departments</div>
+                                    <div class="designation">Project coordinator. </div>
                                 </div>
                                 <ul class="social-icon-two">
                                     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -128,8 +601,8 @@
                             <div class="inner-box wow fadeInUp" data-wow-delay="400ms">
                                 <div class="image"><a href="#"><img src="https://blogtimenow.com/wp-content/uploads/2014/06/hide-facebook-profile-picture-notification.jpg" alt=""></a></div>
                                 <div class="lower-content">
-                                    <h4> <a href="#">Agnes</a></h4>
-                                    <div class="designation">Director Of Health Department</div>
+                                    <h4> <a href="#">NIYONSHIMA Asterie</a></h4>
+                                    <div class="designation">Coordinatrice de la commission diocÃ©saine justice</div>
                                 </div>
                                 <ul class="social-icon-two">
                                     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -144,8 +617,8 @@
                             <div class="inner-box wow fadeInDown" data-wow-delay="200ms">
                                 <div class="image"><a href="#"><img src="https://blogtimenow.com/wp-content/uploads/2014/06/hide-facebook-profile-picture-notification.jpg" alt=""></a></div>
                                 <div class="lower-content">
-                                    <h4> <a href="#">Fidel</a></h4>
-                                    <div class="designation">Director Of Development Department</div>
+                                    <h4> <a href="#">DISHIMIMANA Fidelr</a></h4>
+                                    <div class="designation">Chief of Development Department</div>
                                 </div>
                                 <ul class="social-icon-two">
                                     <li><a href="#"><span class="fa fa-facebook"></span></a></li>
@@ -157,6 +630,108 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+
+
+        <!-- Funfact Section -->
+        <section class="funfacts-section">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h1>{{__('about.Numbers-speaking')}}</h1>
+                    <div class="text"> </div>
+                </div>
+                <div class="outer-box">
+                    <div class="funfact-wrapper row">
+
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>{{__('about.our-team')}}</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="12">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">( {{__('about.our-team-content')}} )</div>
+                            </div>
+                        </div>
+
+                        <!--Column-->
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>Parishes</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="30">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">All parishes we work with.</div>
+                            </div>
+                        </div>
+
+                        <!--Column-->
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>Centrale</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="139">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">Centrale .</div>
+                            </div>
+                        </div>
+
+
+                        <!--Column-->
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>Cells</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="197">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">Cells.</div>
+                            </div>
+                        </div>
+
+                        <!--Column-->
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>Sectors</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="36">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">Sectors we work with</div>
+                            </div>
+                        </div>
+
+                        <!--Column-->
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>Districts</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="4">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">Districts.</div>
+                            </div>
+                        </div>
+
+
+                        <!--Column-->
+                        <div class="col-md-3 counter-block wow fadeInUp" data-wow-delay="300ms">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/icons/icon-5.png" alt=""></div>
+                                <h4>CEBs</h4>
+                                <div class="count-box">
+                                    <span class="prefix"></span><span class="count-text" data-speed="3000" data-stop="5472">0</span><span class="affix"></span>
+                                </div>
+                                <div class="text">CEBS.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 

@@ -55,6 +55,10 @@
 
         @include('site.header')
 
+            @if(session()->has('success'))
+                <script>alert('Comment')</script>
+            @endif
+
 
 
         <!-- Page Title -->
@@ -99,98 +103,65 @@
 
                                             </div>
                                             <ul class="social-icon-three">
-                                                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                                                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}"><span class="fa fa-facebook"></span></a></li>
+                                                <li><a href="https://twitter.com/intent/tweet?text={{$selectedBlog->blogTitle}}&url={{url()->current()}}"><span class="fa fa-twitter"></span></a></li>
+
                                             </ul>
                                         </div>
                                     </div>
-                                    {{--<div class="bottom-content">
-                                        <!-- Author -->
-                                        <div class="author-box">
-                                            <div class="wrapper-area">
-                                                <div class="img-box">
-                                                    <img src="images/resource/author-thumb-5.jpg" alt="Awesome Image">
-                                                </div>
-                                                <h3>Steve Anderson</h3>
-                                                <div class="text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupting.</div>
-                                                <ul class="social-icon-three">
-                                                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                                    <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                                    <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                                                    <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                                                    <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- Post Pagination -->
-                                        <div class="blog-post-pagination">
-                                            <div class="wrapper-box">
+                                    <div class="bottom-content">
 
-                                                <div class="prev-post">
-                                                    <a href="#"> Previous Post</a>
-                                                    <h4>Coaching for our fundraisers</h4>
-                                                </div>
-
-                                                <div class="page-view"><span class="fa fa-th"></span></div>
-
-                                                <div class="next-post">
-                                                    <a href="#">Next Topic </a>
-                                                    <h4>Camp for japan earth quake</h4>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <!-- Comment Reply -->
                                         <div class="comments-area">
                                             <div class="group-title">
-                                                <h2>Read Comments</h2>
-                                            </div>
-                                            <!--Comment Box-->
-                                            <div class="comment-box">
-                                                <div class="comment">
-                                                    <div class="author-thumb"><img src="images/resource/author-thumb-6.jpg" alt=""></div>
-                                                    <div class="comment-inner">
-                                                        <div class="comment-info">Steven Rich<span class="date">February 26, 2019</span></div>
-                                                        <div class="text">On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized saying through shrinking.</div>
-                                                        <a class="reply-comment" href="#"><span class="flaticon-next"></span> Reply</a>
-                                                    </div>
-                                                </div>
+                                                @if($comments->count() > 0)
+                                                    <h2>{{$comments->count()}} Comments</h2>
+                                                @else
+                                                    <h2>No Comments</h2>
+                                                @endif
+
                                             </div>
 
+
                                             <!--Comment Box-->
-                                            <div class="comment-box">
-                                                <div class="comment">
-                                                    <div class="author-thumb"><img src="images/resource/author-thumb-7.jpg" alt=""></div>
-                                                    <div class="comment-inner">
-                                                        <div class="comment-info">William Cobus,<span class="date">February 25, 2019</span></div>
-                                                        <div class="text"> These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled nothing.</div>
-                                                        <a class="reply-comment" href="#"><span class="flaticon-next"></span> Reply</a>
+                                            @foreach($comments as $comment)
+                                                <div class="comment-box">
+                                                    <div class="comment">
+                                                        <div class="author-thumb"><img src="{{asset('images/resource/author-thumb-1.jpg')}}" alt=""></div>
+                                                        <div class="comment-inner">
+                                                            <div class="comment-info">{{$comment->names}}<span class="date">{{\Carbon\Carbon::make($comment->created_at)->diffForHumans()}}</span></div>
+                                                            <div class="text">{{$comment->comment}}</div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+
+                                            @endforeach
+
                                         </div>
                                         <!-- Comment form -->
                                         <div class="comment-form">
                                             <div class="group-title">
                                                 <h2>Leave a Reply</h2>
                                             </div>
-                                            <form method="post" action="http://steelthemes.com/demo/html/Goodsoul_html/contact.html">
+                                            <form method="post" action="{{route('sendcomment')}}">
+                                                @csrf
                                                 <div class="row clearfix">
 
                                                     <div class="col-md-12 form-group">
-                                                        <textarea name="message" placeholder="Comment..."></textarea>
+                                                        <textarea name="comment" placeholder="Comment..."></textarea>
                                                     </div>
                                                     <div class="col-md-4 form-group">
-                                                        <input type="text" name="username" placeholder="Name*" required="">
+                                                        <input type="text" name="names" placeholder="Names*" required="">
+                                                    </div>
+
+                                                    <div class="col-md-4 form-group">
+                                                        <input type="text" name="phone" placeholder="Phone number" required="">
                                                     </div>
                                                     <div class="col-md-4 form-group">
                                                         <input type="email" name="email" placeholder="Email*" required="">
                                                     </div>
-                                                    <div class="col-md-4 form-group">
-                                                        <input type="text" name="website" placeholder="Website" required="">
-                                                    </div>
+
+                                                    <input hidden name="blog_id" value="{{$selectedBlog->id}}" id="">
+
                                                     <div class="col-md-12 form-group">
                                                         <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span>Post Comment</span></button>
                                                     </div>
@@ -198,7 +169,7 @@
                                             </form>
                                         </div>
                                         <!-- End Form -->
-                                    </div>--}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

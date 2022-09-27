@@ -12,4 +12,9 @@ class Blog extends Model
     use HasFactory, SoftDeletes;
     protected $guarded=[];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 }

@@ -18,4 +18,12 @@ class Centrale extends Model
     public function imiryangos(){
         return $this->hasMany(Imiryango::class,'centrale_id');
     }
+
+    public function children(){
+        return $this->hasMany(Children::class,'centrale_id');
+    }
+
+    public function imiryango(){
+        return $this->hasMany(Imiryango::class,'centrale_id');
+    }
 }

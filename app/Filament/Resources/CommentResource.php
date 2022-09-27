@@ -19,6 +19,10 @@ class CommentResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
+    protected static ?int $navigationSort = 1;
+
+    protected static ?string $navigationGroup = 'About website';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -48,14 +52,10 @@ class CommentResource extends Resource
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('phone'),
                 Tables\Columns\TextColumn::make('comment'),
-                Tables\Columns\TextColumn::make('published_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime(),
+
+
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime()->label('Sent at'),
             ])
             ->filters([
                 //
@@ -67,14 +67,14 @@ class CommentResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -82,5 +82,5 @@ class CommentResource extends Resource
             'create' => Pages\CreateComment::route('/create'),
             'edit' => Pages\EditComment::route('/{record}/edit'),
         ];
-    }    
+    }
 }

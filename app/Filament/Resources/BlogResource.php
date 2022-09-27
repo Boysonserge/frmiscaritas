@@ -15,6 +15,7 @@ use Filament\Tables;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class BlogResource extends Resource
 {
@@ -56,7 +57,7 @@ class BlogResource extends Resource
                                 Forms\Components\Textarea::make('blogSummary')
                                     ->required()
                                     ->maxLength(65535),
-                                Forms\Components\RichEditor::make('mainStory')
+                                TinyEditor::make('mainStory')
                             ]),
 
 
@@ -80,7 +81,7 @@ class BlogResource extends Resource
                                 Forms\Components\Textarea::make('blogSummary_en')
                                     ->required()
                                     ->maxLength(65535),
-                                Forms\Components\Textarea::make('mainStory_en')
+                                TinyEditor::make('mainStory_en')
                                     ->required(),
                             ]),
 
@@ -103,7 +104,7 @@ class BlogResource extends Resource
                                 Forms\Components\Textarea::make('blogSummary_kiny')
                                     ->required()
                                     ->maxLength(65535),
-                                Forms\Components\RichEditor::make('mainStory_kiny')
+                                TinyEditor::make('mainStory_kiny')
                                     ->required(),
                             ]),
                     ]),
